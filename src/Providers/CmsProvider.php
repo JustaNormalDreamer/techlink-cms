@@ -14,7 +14,9 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->commands([
+           Console\Commands\CmsCommand::class,
+        ]);
     }
 
     /**
@@ -61,23 +63,23 @@ class CmsServiceProvider extends ServiceProvider
     private function registerPublishable()
     {
         $this->publishes([
-            __DIR__.'/config/cms.php' => config_path('cms.php'),
+            __DIR__.'/../../config/cms.php' => config_path('cms.php'),
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/public/assets' => public_path('vendor/techlink/cms'),
+            __DIR__.'/../../public/assets' => public_path('vendor/techlink/cms'),
         ], 'public');
 
         $this->publishes([
-            __DIR__.'/resources/views' => base_path('resources/views/techlink/cms'),
+            __DIR__.'/../../resources/views' => base_path('resources/views/techlink/cms'),
         ], 'views');
 
         $this->publishes([
-            __DIR__.'/database/migrations' => base_path('database/migrations'),
+            __DIR__.'/../../database/migrations' => base_path('database/migrations'),
         ], 'migrations');
 
         $this->publishes([
-            __DIR__.'/database/factories' => base_path('database/factories'),
+            __DIR__.'/../../database/factories' => base_path('database/factories'),
         ], 'factories');
     }
 }

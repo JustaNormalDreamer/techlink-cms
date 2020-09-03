@@ -9,8 +9,11 @@ class CategoryTest extends TestCase
     /**
      * @test
      */
-    public function first_test()
+    public function it_returns_category_index_view()
     {
-        $this->assertTrue(true);
+        $this->withoutExceptionHandling();
+
+       $this->get('cms/categories')
+           ->assertOk();
     }
 }
