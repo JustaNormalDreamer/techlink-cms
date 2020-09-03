@@ -1,6 +1,6 @@
 <?php
 
-namespace Techlink\Cms\Services;
+namespace techlink\cms\Services;
 
 use Illuminate\Support\Str;
 

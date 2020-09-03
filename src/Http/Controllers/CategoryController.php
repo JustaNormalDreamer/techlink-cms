@@ -4,9 +4,9 @@ namespace techlink\cms\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
-use Techlink\Cms\Requests\CommonRequest;
-use Techlink\Cms\Models\Category;
-use Techlink\Cms\Services\ModelService;
+use techlink\cms\Http\Requests\CommonRequest;
+use techlink\cms\Models\Category;
+use techlink\cms\Services\ModelService;
 
 class CategoryController extends Controller
 {

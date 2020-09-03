@@ -3,8 +3,8 @@
 namespace techlink\cms\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Techlink\Cms\Models\Post;
-use Techlink\Cms\Services\ModelService;
+use techlink\cms\Models\Post;
+use techlink\cms\Services\ModelService;
 
 class PostController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Techlink\Cms\Requests;
+namespace techlink\cms\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
