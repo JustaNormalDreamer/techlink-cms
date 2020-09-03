@@ -15,7 +15,7 @@ class CmsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands([
-           Console\Commands\CmsCommand::class,
+           \techlink\cms\Console\Commands\CmsCommand::class,
         ]);
     }
 
