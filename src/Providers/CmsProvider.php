@@ -36,10 +36,10 @@ class CmsServiceProvider extends ServiceProvider
     private function registerResources()
     {
         //load the migrations
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         //load the views
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'cms');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'cms');
 
         $this->registerRoutes();
     }
