@@ -1,0 +1,34 @@
+{
+    "name": "techlink/cms",
+    "description": "A CMS package developed by me.",
+    "type": "cms",
+    "license": "techlink",
+    "authors": [
+        {
+            "name": "Dipesh Shrestha",
+            "email": "team7hookage@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "orchestra/testbench": "^7.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "techlink\\cms\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "techlink\\cms\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "techlink\\cms\\Providers\\CmsServiceProvider"
+            ]
+        }
+    }
+}
