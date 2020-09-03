@@ -25,7 +25,7 @@
                                     <td>{{ $post->name }}</td>
                                     <td>{{ $post->posts_count }}</td>
                                     @include('cms::components.index._actions', [
-                                        'type' => 'categories',
+                                        'type' => 'posts',
                                         'model' => $post
                                 ])
                                 </tr>

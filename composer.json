@@ -10,7 +10,11 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "laravelcollective/html": "^6.1",
+        "realrashid/sweet-alert": "^3.1",
+        "unisharp/laravel-filemanager": "^2.1"
+    },
     "require-dev": {
         "orchestra/testbench": "^7.0@dev"
     },

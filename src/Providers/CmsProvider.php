@@ -4,6 +4,8 @@ namespace techlink\cms\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use techlink\cms\Http\View\Composers\CategoryComposer;
 
 class CmsServiceProvider extends ServiceProvider
 {
@@ -31,6 +33,7 @@ class CmsServiceProvider extends ServiceProvider
         }
 
         $this->registerResources();
+        $this->bootviewComposers();
     }
 
     private function registerResources()
@@ -54,7 +57,7 @@ class CmsServiceProvider extends ServiceProvider
     private function routeConfiguration()
     {
         return [
-            'name' => 'cms.',
+            'as' => 'cms.',
             'prefix' => 'cms',
             'namespace' => 'techlink\cms\Http\Controllers',
         ];
@@ -81,5 +84,10 @@ class CmsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../../database/factories' => base_path('database/factories'),
         ], 'factories');
+    }
+
+    private function bootviewComposers()
+    {
+        View::composer('cms::categories.form', CategoryComposer::class);
     }
 }
