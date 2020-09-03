@@ -54,9 +54,9 @@ class CmsServiceProvider extends ServiceProvider
     private function routeConfiguration()
     {
         return [
+            'name' => 'cms.',
             'prefix' => 'cms',
             'namespace' => 'techlink\cms\Http\Controllers',
-            'name' => 'cms.'
         ];
     }
 
