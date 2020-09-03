@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Techlink\Cms\Traits;
-
+namespace techlink\cms\Traits;
 
 trait CmsTrait
 {

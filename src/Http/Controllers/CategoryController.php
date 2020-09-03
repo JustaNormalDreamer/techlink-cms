@@ -3,7 +3,9 @@
 namespace techlink\cms\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use techlink\cms\Http\Requests\CommonRequest;
 use techlink\cms\Models\Category;
 use techlink\cms\Services\ModelService;

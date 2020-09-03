@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use techlink\cms\Http\View\Composers\CategoryComposer;
+use techlink\cms\Http\View\Composers\PostComposer;
 
 class CmsServiceProvider extends ServiceProvider
 {
@@ -33,7 +34,7 @@ class CmsServiceProvider extends ServiceProvider
         }
 
         $this->registerResources();
-        $this->bootviewComposers();
+        $this->bootViewComposers();
     }
 
     private function registerResources()
@@ -57,6 +58,7 @@ class CmsServiceProvider extends ServiceProvider
     private function routeConfiguration()
     {
         return [
+            'middleware' => ['web', 'auth'],
             'as' => 'cms.',
             'prefix' => 'cms',
             'namespace' => 'techlink\cms\Http\Controllers',
@@ -86,8 +88,9 @@ class CmsServiceProvider extends ServiceProvider
         ], 'factories');
     }
 
-    private function bootviewComposers()
+    private function bootViewComposers()
     {
         View::composer('cms::categories.form', CategoryComposer::class);
+        View::composer('cms::posts.form', PostComposer::class);
     }
 }

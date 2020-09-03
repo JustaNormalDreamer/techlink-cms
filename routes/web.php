@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::resource('categories', 'CategoryController');
+//routes for categories
+Route::resource('categories', 'CategoryController')->except(['show']);
 
-Route::resource('posts', 'PostController');
+//routes for posts
+Route::resource('posts', 'PostController')->except(['show']);
+

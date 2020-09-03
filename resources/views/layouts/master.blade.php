@@ -8,11 +8,20 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('vendor/techlink/cms/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/techlink/cms/css/bootstrap.min.css') }}">.
-    <script src="{{ asset('vendor/techlink/cms/js/plugins.min.js') }}" defer></script>
     @stack('styles')
+    <style>
+        .invalid-feedback {
+            display: block !important;
+        }
+        .textarea-description {
+            height: 550px !important;
+        }
+    </style>
 </head>
 <body>
     @yield('content')
-@stack('scripts')
+    <script src="{{ asset('vendor/techlink/cms/js/plugins.min.js') }}"></script>
+    @include('sweetalert::alert')
+    @stack('scripts')
 </body>
 </html>

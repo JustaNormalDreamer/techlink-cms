@@ -12,9 +12,7 @@
 
             <div class="form-group">
                 {!! Form::label('description', 'Post Description') !!}
-                <fieldset>
-                    <textarea name="description" id="description" hidden>{!! old('description') ?? $model->description !!}</textarea>
-                </fieldset>
+                {!! Form::textarea('description', old('description') ?? $model->description , ['class' => 'form-control textarea-description' . ( $errors->has('description') ? ' is-invalid' : '' ), 'placeholder' => 'Post Content', 'required']) !!}
                 @error('description')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -94,7 +92,7 @@
 
 
 {{--including the meta--}}
-@include("ADMIN.components.form._meta")
+@include("cms::components.form._meta")
 
 
 
